@@ -27,6 +27,10 @@ module Mapnik
       mapnik_map_zoom_all @ptr
     end
 
+    def zoom_to(bounds)
+      mapnik_map_zoom_to_box @ptr, bounds.ptr
+    end
+
     def to_file(file)
       file = File.expand_path file
       mapnik_map_render_to_file @ptr, file
