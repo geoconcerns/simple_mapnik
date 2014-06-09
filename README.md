@@ -3,7 +3,8 @@ ffi-mapnik
 ... mapnik from Ruby
 
 NOTE: Mapnik must be installed to /usr/local/lib/libmapnik.*
-NOTE: Uses https://github.com/springmeyer/mapnik-c-api
+
+NOTE: Uses https://github.com/springmeyer/mapnik-c-api (libmapnik_c.dylib compiled on OSX 10.9.3 included in repository)
 
 NOTE: All development has been on Mac, and no testing has been done on other OSes to this point
 
