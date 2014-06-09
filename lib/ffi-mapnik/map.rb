@@ -31,6 +31,14 @@ module Mapnik
       mapnik_map_zoom_to_box @ptr, bounds.ptr
     end
 
+    def to_image
+      mapnik_map_render_to_image @ptr
+    end
+
+    def to_png
+      mapnik_image_to_png_blob to_image
+    end
+
     def to_file(file)
       file = File.expand_path file
       mapnik_map_render_to_file @ptr, file
