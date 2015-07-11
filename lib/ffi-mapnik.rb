@@ -26,7 +26,7 @@ module Mapnik
       mapnik_register_fonts: [[:string, :pointer], :int],
       mapnik_map: [[:uint, :uint], :pointer],
       mapnik_map_free: [[:pointer], :void],
-      #mapnik_map_reset_last_error: [[:pointer], :void]
+      #mapnik_map_reset_last_error: [[:pointer], :void],
       mapnik_map_get_srs: [[:pointer], :string],
       mapnik_map_set_srs: [[:pointer, :string], :int],
       mapnik_map_load: [[:pointer, :string], :int],
