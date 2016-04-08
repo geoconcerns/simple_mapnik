@@ -1,11 +1,11 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path('../lib', __FILE__)
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ffi-mapnik/version'
 
 Gem::Specification.new do |gem|
   gem.name = 'ffi-mapnik'
   gem.version = Mapnik::VERSION
-  gem.platform = Gem::Platform::RUBY
   gem.description = 'FFI wrapper for Mapnik'
   gem.summary = 'Convenient access to Mapnik from Ruby'
   gem.licenses = ['MIT']
@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = '>= 1.9.2'
   gem.required_rubygems_version = '>= 1.3.6'
 
-  gem.files = Dir['README.md', 'bin/**/*', 'lib/**/*']
+  gem.files = Dir['README.md', 'bin/**/*', 'lib/**/*', 'libmapnik_c.dylib']
   gem.require_paths = ['lib']
   gem.bindir = 'bin'
   gem.executables = ['mapnik_console']
