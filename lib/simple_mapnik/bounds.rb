@@ -14,11 +14,10 @@ module Mapnik
       @ptr.autorelease = false
     end
 
-    def self.release;end
-  
+    def self.release; end
+
     def free
       mapnik_bbox_free @ptr
     end
   end
 end
-

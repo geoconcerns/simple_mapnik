@@ -12,7 +12,7 @@ module Mapnik
       @ptr.autorelease = false
     end
 
-    def self.release;end
+    def self.release; end
 
     def free
       mapnik_map_free @ptr
@@ -45,4 +45,3 @@ module Mapnik
     end
   end
 end
-

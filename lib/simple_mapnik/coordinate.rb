@@ -14,4 +14,3 @@ module Mapnik
     end
   end
 end
-

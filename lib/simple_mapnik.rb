@@ -1,7 +1,7 @@
 require 'ffi'
 
 module Mapnik
-  MAPNIK_BASE = File.join(File.dirname(__FILE__), 'ffi-mapnik')
+  MAPNIK_BASE = File.join(File.dirname(__FILE__), 'simple_mapnik')
 
   autoload :Map, File.join(MAPNIK_BASE, 'map')
   autoload :Coordinate, File.join(MAPNIK_BASE, 'coordinate')
@@ -26,7 +26,7 @@ module Mapnik
       mapnik_register_fonts: [[:string, :pointer], :int],
       mapnik_map: [[:uint, :uint], :pointer],
       mapnik_map_free: [[:pointer], :void],
-      #mapnik_map_reset_last_error: [[:pointer], :void],
+      # mapnik_map_reset_last_error: [[:pointer], :void],
       mapnik_map_get_srs: [[:pointer], :string],
       mapnik_map_set_srs: [[:pointer, :string], :int],
       mapnik_map_load: [[:pointer, :string], :int],
@@ -45,7 +45,7 @@ module Mapnik
       mapnik_map_render_to_image: [[:pointer], :pointer],
       mapnik_image_blob_free: [[:pointer], :void],
       mapnik_image_to_png_blob: [[:pointer], :pointer]
-    }
+    }.freeze
 
     extend ::FFI::Library
 
@@ -74,4 +74,3 @@ module Mapnik
     end
   end
 end
-

@@ -1,0 +1,12 @@
+Metrics/LineLength:
+  Max: 100
+
+Style/ClassAndModuleCamelCase:
+  Exclude:
+    - 'lib/simple_mapnik.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/RaiseArgs:
+  EnforcedStyle: compact
