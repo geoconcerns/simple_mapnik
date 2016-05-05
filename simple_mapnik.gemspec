@@ -5,7 +5,7 @@ require 'simple_mapnik/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'simple_mapnik'
-  spec.version = Mapnik::VERSION
+  spec.version = SimpleMapnik::VERSION
   spec.description = 'Simple FFI wrapper for Mapnik'
   spec.summary = 'Simple access to Mapnik library from Ruby'
   spec.license = 'MIT'
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 1.9.2'
   spec.required_rubygems_version = '>= 1.3.6'
 
-  spec.files = Dir['README.md', 'lib/**/*', 'ext/**/*']
+  spec.files = Dir['README.md', 'lib/**/*']
   spec.require_paths = ['lib']
   spec.bindir = 'bin'
   spec.executables = ['mapnik_console']

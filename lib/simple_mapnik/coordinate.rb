@@ -1,6 +1,6 @@
-module Mapnik
+module SimpleMapnik
   class Coordinate
-    include Mapnik::FFI
+    include SimpleMapnik::FFI
 
     attr_accessor :x, :y, :ptr
 

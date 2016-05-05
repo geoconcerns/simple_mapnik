@@ -13,9 +13,9 @@ To open IRB session with ffi-mapnik already loaded: `bin/mapnik_console`
 ```ruby
 require './lib/simple_mapnik' # not necessary if using bin/mapnik_console
 # => true
-map = Mapnik::Map.new 256, 256
-# => #<Mapnik::Map:0x007f825aaac4c0 @width=256, @height=256, @ptr=#<FFI::AutoPointer address=0x007f8259f07ea0>>
-Mapnik.register_datasources '/usr/local/lib/mapnik/input'
+map = SimpleMapnik::Map.new 256, 256
+# => #<SimpleMapnik::Map:0x007f825aaac4c0 @width=256, @height=256, @ptr=#<FFI::AutoPointer address=0x007f8259f07ea0>>
+SimpleMapnik.register_datasources '/usr/local/lib/mapnik/input'
 # => 0
 map.load '/path/to/stylesheet.xml'
 # => 0

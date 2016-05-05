@@ -1,6 +1,6 @@
-module Mapnik
+module SimpleMapnik
   class Bounds
-    include Mapnik::FFI
+    include SimpleMapnik::FFI
 
     attr_accessor :x_min, :y_min, :x_max, :y_max, :ptr
 

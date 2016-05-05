@@ -1,6 +1,6 @@
 require 'ffi'
 
-module Mapnik
+module SimpleMapnik
   MAPNIK_BASE = File.join(File.dirname(__FILE__), 'simple_mapnik')
 
   autoload :Map, File.join(MAPNIK_BASE, 'map')
@@ -66,11 +66,11 @@ module Mapnik
     end
 
     def register_datasources(sources)
-      Mapnik::FFI.mapnik_register_datasources sources, nil
+      SimpleMapnik::FFI.mapnik_register_datasources sources, nil
     end
 
     def register_fonts(fonts)
-      Mapnik::FFI.mapnik_register_fonts fonts, nil
+      SimpleMapnik::FFI.mapnik_register_fonts fonts, nil
     end
   end
 end
