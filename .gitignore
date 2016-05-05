@@ -4,3 +4,4 @@ Gemfile.lock
 *.dylib
 *.so
 .bundle/
+.byebug_history

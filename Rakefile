@@ -8,6 +8,8 @@ end
 
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
+require './lib/simple_mapnik/api.rb'
+
 RuboCop::RakeTask.new(:rubocop) do |task|
   task.requires << 'rubocop-rspec'
   task.fail_on_error = true
@@ -16,11 +18,10 @@ task spec: :rubocop do
   RSpec::Core::RakeTask.new(:spec)
 end
 
-require './lib/simple_mapnik/api.rb'
-task default: :prepare
-
-task :prepare do
-  SimpleMapnik::Api.install('https://github.com/geoconcerns/mapnik-c-api/archive/master.zip')
+task :install do
+  SimpleMapnik::Api.new.install
 end
+
+task default: :install
 
 task '2>&1' => :default
