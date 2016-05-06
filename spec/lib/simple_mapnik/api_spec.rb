@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'byebug'
 
 describe SimpleMapnik::Api do
   let(:output_dir) { './tmp/' }
@@ -11,7 +10,7 @@ describe SimpleMapnik::Api do
     context 'with an existing mapnik c api library' do
       it 'does not compile and install the library' do
         allow(File).to receive(:exist?).and_return(true)
-        expect(subject).to_not receive(:install)
+        expect(subject).not_to receive(:install)
         subject.check_and_install
       end
     end

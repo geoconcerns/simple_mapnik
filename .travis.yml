@@ -1,0 +1,24 @@
+language: ruby
+sudo: true
+matrix:
+  include:
+    - os: linux
+      compiler: clang
+      env: MAPNIK_VERSION="2.3"
+    - os: linux
+      compiler: gcc
+      env: MAPNIK_VERSION="2.3"
+
+before_install:
+ - sudo apt-add-repository --yes ppa:mapnik/nightly-${MAPNIK_VERSION}
+ - sudo apt-get update -y
+
+install:
+ - sudo apt-get -y install wget build-essential make libmapnik=${MAPNIK_VERSION}* mapnik-utils=${MAPNIK_VERSION}* libmapnik-dev=${MAPNIK_VERSION}* mapnik-input-plugin*=${MAPNIK_VERSION}*
+
+before_script:
+ - gem install bundler -v 1.12.3
+ - bundle install
+
+script:
+ - rake spec

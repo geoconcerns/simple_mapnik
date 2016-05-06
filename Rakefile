@@ -6,22 +6,24 @@ rescue
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
-require 'rspec/core/rake_task'
-require 'rubocop/rake_task'
-require './lib/simple_mapnik/api.rb'
+begin
+  require 'rspec/core/rake_task'
+  require 'rubocop/rake_task'
 
-RuboCop::RakeTask.new(:rubocop) do |task|
-  task.requires << 'rubocop-rspec'
-  task.fail_on_error = true
+  RuboCop::RakeTask.new(:rubocop) do |task|
+    task.requires << 'rubocop-rspec'
+    task.fail_on_error = true
+  end
+  task spec: :rubocop do
+    RSpec::Core::RakeTask.new(:spec)
+  end
+rescue LoadError
 end
-task spec: :rubocop do
-  RSpec::Core::RakeTask.new(:spec)
-end
+
+require './lib/simple_mapnik/api.rb'
 
 task :install do
   SimpleMapnik::Api.new.install
 end
 
 task default: :install
-
-task '2>&1' => :default
