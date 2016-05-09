@@ -3,6 +3,7 @@ require 'spec_helper'
 describe SimpleMapnik::Map do
   let(:datasources) { '/usr/local/lib/mapnik/input' }
   let(:stylesheet) { './spec/fixtures/sample/stylesheet.xml' }
+  let(:style_string) { IO.read('./spec/fixtures/sample/stylesheet_string.xml') }
   let(:out_file) { './tmp/test.png' }
 
   subject { described_class.new(256, 256) }
@@ -18,6 +19,16 @@ describe SimpleMapnik::Map do
   context 'with an xml stylesheet' do
     it 'renders a shapefile into an image' do
       subject.load(stylesheet)
+      subject.zoom_all
+      expect { subject.to_file(out_file) }
+        .to change { File.exist?(out_file) }
+        .from(false).to(true)
+    end
+  end
+
+  context 'with an xml formatted style string' do
+    it 'renders a shapefile into an image' do
+      subject.load_string(style_string)
       subject.zoom_all
       expect { subject.to_file(out_file) }
         .to change { File.exist?(out_file) }

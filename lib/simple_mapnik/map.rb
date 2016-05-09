@@ -23,6 +23,10 @@ module SimpleMapnik
       mapnik_map_load @ptr, style
     end
 
+    def load_string(style)
+      mapnik_map_load_string @ptr, style
+    end
+
     def zoom_all
       mapnik_map_zoom_all @ptr
     end

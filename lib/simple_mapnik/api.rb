@@ -27,11 +27,11 @@ module SimpleMapnik
     end
 
     def url
-      @url ||= 'https://github.com/geoconcerns/mapnik-c-api/archive/master.zip'
+      @url ||= 'https://github.com/geoconcerns/mapnik-c-api/archive/v0.0.2.zip'
     end
 
     def src_directory_name
-      @src_directory_name ||= 'mapnik-c-api-master'
+      @src_directory_name ||= 'mapnik-c-api-0.0.2'
     end
 
     protected
