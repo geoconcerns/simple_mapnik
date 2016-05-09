@@ -1,3 +1,17 @@
+require 'simplecov'
+
+if ENV['CI']
+  require 'coveralls'
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+end
+
+if ENV['COVERAGE'] || ENV['CI']
+  SimpleCov.start do
+    add_filter '/spec'
+    add_filter '/lib/simple_mapnik/version.rb'
+  end
+end
+
 require 'simple_mapnik/api'
 require 'ffi'
 
