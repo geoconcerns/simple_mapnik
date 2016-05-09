@@ -10,7 +10,8 @@ module SimpleMapnik
 
   module FFI
     def self.find_lib(lib)
-      File.expand_path File.join('.', "#{lib}.#{::FFI::Platform::LIBSUFFIX}")
+      gem_root = Gem::Specification.find_by_name('simple_mapnik').gem_dir
+      File.expand_path File.join(gem_root, "#{lib}.#{::FFI::Platform::LIBSUFFIX}")
     end
 
     def self.mapnik_c_api_path
