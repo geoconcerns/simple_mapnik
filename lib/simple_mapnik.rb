@@ -31,6 +31,7 @@ module SimpleMapnik
       mapnik_map_get_srs: [[:pointer], :string],
       mapnik_map_set_srs: [[:pointer, :string], :int],
       mapnik_map_load: [[:pointer, :string], :int],
+      mapnik_map_load_string: [[:pointer, :string], :int],
       mapnik_map_zoom_all: [[:pointer], :int],
       mapnik_map_render_to_file: [[:pointer, :string], :int],
       mapnik_map_resize: [[:pointer, :uint, :uint], :void],
