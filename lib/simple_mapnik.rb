@@ -50,7 +50,7 @@ module SimpleMapnik
 
     extend ::FFI::Library
 
-    begin
+    def self.attach_functions
       ffi_lib mapnik_c_api_path
 
       MAPNIK_FUNCTIONS.each do |func, params|
@@ -59,6 +59,8 @@ module SimpleMapnik
     rescue LoadError, NoMethodError
       raise LoadError.new('Could not load Mapnik library and / or C API')
     end
+
+    attach_functions
   end
 
   class << self
