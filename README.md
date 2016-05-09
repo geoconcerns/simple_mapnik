@@ -1,26 +1,58 @@
-simple_mapnik
+SimpleMapnik
 ==========
-... mapnik from Ruby
+[![Build Status](https://travis-ci.org/geoconcerns/simple_mapnik.svg)](https://travis-ci.org/geoconcerns/simple_mapnik)
+[![Coverage Status](https://coveralls.io/repos/github/geoconcerns/simple_mapnik/badge.svg?branch=master)](https://coveralls.io/github/geoconcerns/simple_mapnik?branch=master)
 
-NOTE: Mapnik must be installed to /usr/local/lib/libmapnik.*
+Simple ruby access to the Mapnik library using [ruby-ffi](https://github.com/ffi/ffi) and [mapnik-c-api](https://github.com/springmeyer/mapnik-c-api). Adapted from [ffi-mapnik](https://github.com/scooterw/ffi-mapnik).
 
-NOTE: Uses https://github.com/springmeyer/mapnik-c-api (libmapnik_c.dylib compiled on OSX 10.10.3 included in repository)
+## Prerequisites
 
-NOTE: All development has been on Mac, and no testing has been done on other OSes to this point
+SimpleMapnik requires that Mapnik 3.x or 2.x be installed at `/usr/local/lib/libmapnik.*`. In addition, a C++ compiler and build environment is needed for the c api extension.
 
-To open IRB session with ffi-mapnik already loaded: `bin/mapnik_console`
+On Mac OS X:
+
+- https://github.com/mapnik/mapnik/wiki/MacInstallation or ```brew install mapnik```
+- Build environment: [Xcode](https://developer.apple.com/xcode/)
+
+On Linux:
+- https://github.com/mapnik/mapnik/wiki/LinuxInstallation
+- Build environment: [gcc](https://help.ubuntu.com/community/InstallingCompilers) or clang
+
+## Installation
+
+Install from the latest tagged release:
+```
+$ gem install simple_mapnik
+```
+
+Or, add it to the Gemfile of an existing project:
+```
+gem 'simple_mapnik'
+```
+
+Then run:
+```
+$ bundle install
+```
+
+## Usage
+
+Open an IRB session, or run `bin/mapnik_console`:
 
 ```ruby
 require './lib/simple_mapnik' # not necessary if using bin/mapnik_console
-# => true
-map = SimpleMapnik::Map.new 256, 256
-# => #<SimpleMapnik::Map:0x007f825aaac4c0 @width=256, @height=256, @ptr=#<FFI::AutoPointer address=0x007f8259f07ea0>>
+
 SimpleMapnik.register_datasources '/usr/local/lib/mapnik/input'
-# => 0
-map.load '/path/to/stylesheet.xml'
-# => 0
+
+map = SimpleMapnik::Map.new 256, 256
+map.load 'spec/fixtures/sample/stylesheet.xml'
 map.zoom_all
-# => 0
 map.to_file '~/Desktop/sample_output.png'
-# => 0
+```
+
+## Testing
+
+```
+$ bundle install
+$ rake spec
 ```
