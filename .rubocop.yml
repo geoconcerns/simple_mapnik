@@ -10,3 +10,7 @@ Style/Documentation:
 
 Style/RaiseArgs:
   EnforcedStyle: compact
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'Rakefile'

@@ -1,2 +1,7 @@
 Gemfile.lock
 /pkg
+*.gem
+*.dylib
+*.so
+.bundle/
+.byebug_history

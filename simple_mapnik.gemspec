@@ -5,30 +5,27 @@ require 'simple_mapnik/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'simple_mapnik'
-  spec.version = Mapnik::VERSION
-  spec.description = 'Simple FFI wrapper for Mapnik'
-  spec.summary = 'Simple access to Mapnik library from Ruby'
-  spec.license = 'MIT'
-
+  spec.version = SimpleMapnik::VERSION
   spec.authors = ['Eliot Jordan']
   spec.email = ['eliotj@princeton.edu']
+  spec.description = 'Simple FFI wrapper for Mapnik'
+  spec.summary = 'Simple access to Mapnik library from Ruby'
   spec.homepage = 'https://github.com/geoconcerns/simple_mapnik'
+  spec.license = 'MIT'
 
-  spec.required_ruby_version = '>= 1.9.2'
-  spec.required_rubygems_version = '>= 1.3.6'
-
-  spec.files = Dir['README.md', 'lib/**/*', 'ext/**/*']
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
-  spec.bindir = 'bin'
-  spec.executables = ['mapnik_console']
   spec.extensions = ['Rakefile']
 
   spec.add_dependency 'ffi', '~> 1.9.0'
+  spec.add_dependency 'rubyzip', '~> 1.2.0'
 
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop', '~> 0.39'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.4.1'
   spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'bundler', '~> 1.6'
+  spec.add_development_dependency 'bundler', '~> 1.12'
 end

@@ -1,6 +1,6 @@
-module Mapnik
+module SimpleMapnik
   class Map
-    include Mapnik::FFI
+    include SimpleMapnik::FFI
 
     attr_accessor :width, :height, :ptr
 
