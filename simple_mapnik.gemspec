@@ -27,5 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 0.39'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.4.1'
   spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'bundler', '~> 1.12'
 end
