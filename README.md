@@ -9,9 +9,13 @@ Simple ruby access to the Mapnik library using [ruby-ffi](https://github.com/ffi
 
 SimpleMapnik requires that Mapnik 3.x or 2.x be installed at `/usr/local/lib/libmapnik.*`. The gem comes with a pre-built c api library compiled on OSX 10.10.5. For linux a C++ compiler and build environment is needed. 
 
-If the OSX binary does not work, the library can be compiled (after installing a build environment) by running: ``` rake api:build ```.
+If the OSX binary does not work, the library can be compiled (after installing a build environment) by running: 
 
-Mac OSX:
+``` 
+$ rake api:build 
+```
+
+Mac OS X:
 
 - https://github.com/mapnik/mapnik/wiki/MacInstallation or ```brew install mapnik```
 - Build environment: [Xcode](https://developer.apple.com/xcode/)
