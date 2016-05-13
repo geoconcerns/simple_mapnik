@@ -20,10 +20,19 @@ begin
 rescue LoadError
 end
 
-require './lib/simple_mapnik/api.rb'
+require 'simple_mapnik/api'
+require 'ffi'
 
-task :install do
-  SimpleMapnik::Api.new.install
+namespace :api do
+  desc 'check for mapnik c api and install'
+  task :check_and_install do
+    SimpleMapnik::Api.new.check_and_install
+  end
+
+  desc 'build mapnik c api'
+  task :build do
+    SimpleMapnik::Api.new.install
+  end
 end
 
-task default: :install
+task default: ['api:check_and_install']
