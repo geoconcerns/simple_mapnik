@@ -1,0 +1,14 @@
+background_color: '#ffffff' # use '#ffffff00' for a transparent background
+
+polygon_fill_color: '#fffff0'
+
+line_stroke_color: '#483d8b'
+line_stroke_width: '0.3'
+
+marker_fill: '#0000ff'
+marker_width: '5'
+marker_height: '5'
+marker_stroke_color: '#483d8b'
+marker_stroke_width: '0.2'
+marker_placement: 'point'
+marker_allow_overlap-overlap: 'true'

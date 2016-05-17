@@ -7,6 +7,7 @@ module SimpleMapnik
   autoload :Coordinate, File.join(MAPNIK_BASE, 'coordinate')
   autoload :Bounds, File.join(MAPNIK_BASE, 'bounds')
   autoload :Api, File.join(MAPNIK_BASE, 'api')
+  autoload :Config, File.join(MAPNIK_BASE, 'config')
 
   module FFI
     def self.find_lib(lib)
