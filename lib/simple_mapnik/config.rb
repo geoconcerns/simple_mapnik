@@ -22,7 +22,11 @@ module SimpleMapnik
     end
 
     def config_file
-      File.expand_path('../../config/mapnik.yml', File.dirname(__FILE__))
+      if defined?(Rails) && Rails.root
+        File.join(Rails.root, 'config/mapnik.yml')
+      else
+        File.expand_path('../../config/mapnik.yml', File.dirname(__FILE__))
+      end
     end
 
     def srs
@@ -89,7 +93,6 @@ module SimpleMapnik
               xml.PolygonSymbolizer(fill: polygon_fill_color)
               xml.LineSymbolizer(
                 stroke: line_stroke_color,
-                smooth: '1.0',
                 :'stroke-width' => line_stroke_width)
             end
           end
