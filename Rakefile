@@ -20,7 +20,7 @@ begin
 rescue LoadError
 end
 
-require 'simple_mapnik/api'
+require './lib/simple_mapnik/api.rb'
 require 'ffi'
 
 namespace :api do
