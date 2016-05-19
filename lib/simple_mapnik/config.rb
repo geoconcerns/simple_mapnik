@@ -84,7 +84,7 @@ module SimpleMapnik
                 fill: marker_fill,
                 width: marker_width,
                 height: marker_height,
-                :'stroke' => marker_stroke_color,
+                stroke: marker_stroke_color,
                 :'stroke-width' => marker_stroke_width,
                 :'allow-overlap' => 'true'
               )
