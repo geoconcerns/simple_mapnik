@@ -4,3 +4,4 @@ Gemfile.lock
 .bundle/
 .byebug_history
 coverage
+libmapnik_c.dylib

@@ -35,4 +35,4 @@ namespace :api do
   end
 end
 
-task default: ['api:check_and_install']
+task default: ['api:build']
