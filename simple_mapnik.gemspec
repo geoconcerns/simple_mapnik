@@ -22,12 +22,12 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'ffi', '~> 1.9.0'
   spec.add_dependency 'rubyzip', '~> 1.2.0'
   spec.add_dependency 'nokogiri'
+  spec.add_dependency 'rake'
+  spec.add_dependency 'bundler', '~> 1.12'
 
-  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop', '~> 0.39'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.4.1'
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'coveralls'
-  spec.add_development_dependency 'bundler', '~> 1.12'
 end
