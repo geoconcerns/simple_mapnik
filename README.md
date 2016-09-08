@@ -2,6 +2,7 @@ SimpleMapnik
 ==========
 [![Build Status](https://travis-ci.org/geoconcerns/simple_mapnik.svg)](https://travis-ci.org/geoconcerns/simple_mapnik)
 [![Coverage Status](https://coveralls.io/repos/github/geoconcerns/simple_mapnik/badge.svg?branch=master)](https://coveralls.io/github/geoconcerns/simple_mapnik?branch=master)
+[![Gem Version](https://img.shields.io/gem/v/simple_mapnik.svg)](https://github.com/geoconcerns/simple_mapnik/releases)
 
 Simple ruby access to the Mapnik library using [ruby-ffi](https://github.com/ffi/ffi) and [mapnik-c-api](https://github.com/springmeyer/mapnik-c-api). Adapted from [ffi-mapnik](https://github.com/scooterw/ffi-mapnik).
 
