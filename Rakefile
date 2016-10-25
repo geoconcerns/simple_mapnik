@@ -1,10 +1,10 @@
-# encoding: utf-8
-begin
-  require 'bundler/setup'
-  require 'bundler/gem_tasks'
-rescue
-  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
-end
+# # encoding: utf-8
+# begin
+#   require 'bundler/setup'
+#   require 'bundler/gem_tasks'
+# rescue
+#   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+# end
 
 begin
   require 'rspec/core/rake_task'
